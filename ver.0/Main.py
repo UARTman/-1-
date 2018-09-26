@@ -80,7 +80,7 @@ if __name__=='__main__':
     print('Вывод: Дорога из:, дорога в:, длина дороги')
     Generate(int(input()),int(input()))
     Visual()
-    
+    input()
     
     
     
