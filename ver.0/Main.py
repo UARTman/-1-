@@ -10,6 +10,8 @@ import random
 dots=[]
 roads=[]
 
+minl=-1
+minm=[]
 
 
 class Dot:
@@ -75,6 +77,35 @@ def Visual():
     for i in roads:
         print(i.a.idt,' ',i.b.idt,' ',i.l)
         
+
+def VDTS(x):
+    for i in x:
+        print(i.idt)
+        
+def GoThrough(a,b,m=[],l=0):
+    global minl,minm
+    if not len(m):
+        m.append(a)
+    if minl>-1 and l>=minl:
+        return 0
+    else:
+        if a==b:
+            minm=m[:]
+            minl=l
+            return 1
+        for i in a.roads:
+            if i.oend(a) in m:
+                continue
+            m1=m[:]
+            m1.append(i.oend(a))
+            l1=l
+            l1+=i.l
+            GoThrough(i.oend(a),b,m1,l1)
+        
+
+    
+    
+    
 if __name__=='__main__':
     print('Ввод значений: кол-во городов, enter, кол-во ходов')
     print('Вывод: Дорога из:, дорога в:, длина дороги')
@@ -82,7 +113,7 @@ if __name__=='__main__':
     Visual()
     input()
     
-    
+
     
 
 
