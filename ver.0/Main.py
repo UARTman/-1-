@@ -75,11 +75,15 @@ def Visual():
     for i in roads:
         print(i.a.idt,' ',i.b.idt,' ',i.l)
         
-Generate(5,7)
-
-
-
-
+if __name__=='__main__':
+    print('Ввод значений: кол-во городов, enter, кол-во ходов')
+    print('Вывод: Дорога из:, дорога в:, длина дороги')
+    Generate(int(input()),int(input()))
+    Visual()
+    
+    
+    
+    
 
 
 
