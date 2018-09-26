@@ -111,7 +111,15 @@ if __name__=='__main__':
     print('Вывод: Дорога из:, дорога в:, длина дороги')
     Generate(int(input()),int(input()))
     Visual()
-    input()
+    print('Введите номер пункта А, enter, номер пункта B')
+    a=int(input())
+    b=int(input())
+    GoThrough(dots[a],dots[b])
+    print('Длина оптимального маршрута', minl)
+    print('Перечень городов в маршруте:')
+    VDTS(minm)
+    input('press enter to exit')
+    
     
 
     
