@@ -32,32 +32,50 @@ class Road:
 def genlen(minn=1,maxx=10):
     return random.randrange(minn,maxx+1)
 
-def RandRoads(dot,m=-1):
+def RandRoads(dot,mx,m=-1):
     x=dots[:]
     x.remove(dot)
     for i in dot.roads:
         x.remove(i.oend(dot))
     k=len(x)
-    if m==-1:
-        m=random.randrange(0,k)
-    for i in range(0,m):
-        l=random.randrange(0,len(x))
-        ll=x[l]
-        Road(dot,ll,genlen())
-        x.pop(l)
+    c=0
+    if k:
+        if m==-1:
+            if 1-(len(dot.roads)%1) == min(k,mx)+1:
+                m=min(k,mx)+1
+            else:
+                m=random.randrange(1-(len(dot.roads)%1),min(k,mx)+1)        
+        for i in range(0,m):
+            l=random.randrange(0,len(x))
+            ll=x[l]
+            roads.append(Road(dot,ll,genlen()))
+            x.pop(l)
+            c+=1
+    return c
+
+
 
 def Generate(d,r):
+    global dots,roads
+    dots=[]
+    roads=[]
+    rr=r
     for i in range(0,d):
         dots.append(Dot(i))
-    for i in dots:
-        RandRoads(i)
-        
+        r-=RandRoads(dots[i],1,1)
+    while r:
+        for i in dots:
+            if r==0:
+                break
+            r-=RandRoads(i,r,1)
+    return rr==len(roads)
+
+            
 def Visual():
     for i in roads:
-        print(i.a,' ',i.b,' ',i.l)
+        print(i.a.idt,' ',i.b.idt,' ',i.l)
         
-
-
+Generate(5,7)
 
 
 
