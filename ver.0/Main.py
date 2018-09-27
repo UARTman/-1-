@@ -86,7 +86,7 @@ def GoThrough(a,b,m=[],l=0):
     global minl,minm
     if not len(m):
         m.append(a)
-    if minl>-1 and l>=minl:
+    if minl>=0 and l>=minl:
         return 0
     else:
         if a==b:
@@ -100,7 +100,7 @@ def GoThrough(a,b,m=[],l=0):
             m1.append(i.oend(a))
             l1=l
             l1+=i.l
-            GoThrough(i.oend(a),b,m1,l1)
+            GoThrough(i.oend(a),b,m=m1,l=l1)
         
 
     
@@ -111,16 +111,36 @@ if __name__=='__main__':
     print('Вывод: Дорога из:, дорога в:, длина дороги')
     Generate(int(input()),int(input()))
     Visual()
+    '''
     print('Введите номер пункта А, enter, номер пункта B')
     a=int(input())
     b=int(input())
     GoThrough(dots[a],dots[b])
     print('Длина оптимального маршрута', minl)
     print('Перечень городов в маршруте:')
-    VDTS(minm)
+    VDTS(minm)'''
+    print('Все маршруты: точка из, точка в, длина')
+    paths=[]
+    for i in dots:
+        for j in dots:
+            if i!=j:
+                minl=-1
+                minm=[]
+                GoThrough(i,j,[])
+                paths.append((i,j,minl,minm))
+    
+    for i in paths:
+        print('==========')
+        print(i[0].idt,i[1].idt,i[2])
+        VDTS(i[3])
+    
+    
+    
+    
+    
     input('press enter to exit')
     
-    
+
 
     
 
