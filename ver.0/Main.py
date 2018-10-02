@@ -83,8 +83,8 @@ def VDTS(x):
         print(i.idt)
         
 def VDTSG(x,draw):
-    ImgDraw.drawroads(draw,500,500,400,len(x),roads)
-    ImgDraw.drawcrcls(draw,500,500,400,len(x),50)
+    ImgDraw.drawroads(draw,500,500,200,len(x),roads)
+    ImgDraw.drawcrcls(draw,500,500,200,len(x),30)
         
 def GoThrough(a,b,m=[],l=0):
     global minl,minm

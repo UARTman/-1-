@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import math
 
 font = ImageFont.truetype("arial.ttf", 30)
+font1 = ImageFont.truetype('arial.ttf', 15)
 def center(xc,yc,r,n,k):
     rad=2*math.pi/n*k
     xk=r*math.cos(rad)
@@ -27,6 +28,12 @@ def drawcrcls(draw,xc,yc,r,n,rc):
 def drawroads(draw,xc,yc,r,n,rm):
     for i in rm:
         draw.line([center(xc,yc,r,n,i.a.idt),center(xc,yc,r,n,i.b.idt)],fill='black')
+
+def drawlegenda(draw,rm):
+    for i in range(0,len(rm)):
+        draw.line([1000,1000-i*20,1000-150,1000-i*20,1000-150,1000-(i+1)*20,1000,1000-(i+1)*20,1000,1000-i*20],fill='black')
+
+
 
 
 
