@@ -5,7 +5,7 @@ Created on Tue Sep 25 15:57:25 2018
 @author: UARTman
 """
 import random
-
+import ImgDraw
 
 dots=[]
 roads=[]
@@ -82,6 +82,10 @@ def VDTS(x):
     for i in x:
         print(i.idt)
         
+def VDTSG(x,draw):
+    ImgDraw.drawroads(draw,500,500,400,len(x),roads)
+    ImgDraw.drawcrcls(draw,500,500,400,len(x),50)
+        
 def GoThrough(a,b,m=[],l=0):
     global minl,minm
     if not len(m):
@@ -134,6 +138,11 @@ if __name__=='__main__':
         print(i[0].idt,i[1].idt,i[2])
         VDTS(i[3])
     
+    a=ImgDraw.Image.new('RGBA',(1000,1000),color='white')
+    d=ImgDraw.ImageDraw.Draw(a)
+    VDTSG(dots,d)
+    del d
+    a.show()
     
     
     
