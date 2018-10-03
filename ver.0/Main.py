@@ -7,6 +7,9 @@ Created on Tue Sep 25 15:57:25 2018
 import random
 import ImgDraw
 
+'''
+f=open('out.txt','w')
+f1=open('in.txt','r')'''
 dots=[]
 roads=[]
 
@@ -83,9 +86,9 @@ def VDTS(x):
         print(i.idt)
         
 def VDTSG(x,draw):
-    ImgDraw.drawroads(draw,500,500,400,len(x),roads)
-    ImgDraw.drawcrcls(draw,500,500,400,len(x),50)
-        
+    ImgDraw.drawroads(draw,500,500,200,len(x),roads)
+    ImgDraw.drawcrcls(draw,500,500,200,len(x),30)
+    ImgDraw.drawlegenda(draw,roads)
 def GoThrough(a,b,m=[],l=0):
     global minl,minm
     if not len(m):
@@ -115,6 +118,7 @@ if __name__=='__main__':
     print('Вывод: Дорога из:, дорога в:, длина дороги')
     Generate(int(input()),int(input()))
     Visual()
+    
     '''
     print('Введите номер пункта А, enter, номер пункта B')
     a=int(input())
@@ -122,8 +126,8 @@ if __name__=='__main__':
     GoThrough(dots[a],dots[b])
     print('Длина оптимального маршрута', minl)
     print('Перечень городов в маршруте:')
-    VDTS(minm)'''
-    print('Все маршруты: точка из, точка в, длина')
+    VDTS(minm)
+    print('Все маршруты: точка из, точка в, длина')'''
     paths=[]
     for i in dots:
         for j in dots:
@@ -142,14 +146,12 @@ if __name__=='__main__':
     d=ImgDraw.ImageDraw.Draw(a)
     VDTSG(dots,d)
     del d
+    a.save('Output.png','PNG')
     a.show()
-    
-    
-    
-    
-    input('press enter to exit')
-    
-
+    '''
+    f.close()
+    f1.close()
+    '''
 
     
 
