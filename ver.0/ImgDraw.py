@@ -32,6 +32,8 @@ def drawroads(draw,xc,yc,r,n,rm):
 def drawlegenda(draw,rm):
     for i in range(0,len(rm)):
         draw.line([1000,1000-i*20,1000-150,1000-i*20,1000-150,1000-(i+1)*20,1000,1000-(i+1)*20,1000,1000-i*20],fill='black')
+        draw.text([1000-150,1000-(i+1)*20],'из '+str(rm[i].a.idt)+' в '+str(rm[i].b.idt)+' длина '+str(rm[i].l),fill='black',font=font1)
+        
 
 
 

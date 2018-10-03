@@ -7,6 +7,8 @@ Created on Wed Sep 26 18:19:23 2018
 
 from cx_Freeze import setup, Executable
 
+
+base = None
 setup(
     name = "Генератор графов",
     version = "0",
