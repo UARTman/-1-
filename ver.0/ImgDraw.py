@@ -22,7 +22,9 @@ def drawcrcl(draw,xy,r):
 def drawcrcls(draw,xc,yc,r,n,rc):
     for i in range(0,n):
         drawcrcl(draw,center(xc,yc,r,n,i),rc)
-        draw.text(center(xc,yc,r,n,i),str(i),fill='black',font=font)
+        xy=center(xc,yc,r,n,i)
+        
+        draw.text([xy[0]-15,xy[1]-15],str(i),fill='black',font=font)
         #print(center(xc,yc,r,n,i),rc)
 
 def drawroads(draw,xc,yc,r,n,rm):
