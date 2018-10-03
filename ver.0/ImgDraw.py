@@ -40,13 +40,6 @@ def drawlegenda(draw,rm):
 
 
 
-if __name__=='__main__':
-    a=Image.new('RGBA',(1000,1000),color='white')
-    d=ImageDraw.Draw(a)
-
-
-
-
 
 
 

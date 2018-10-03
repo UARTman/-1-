@@ -7,6 +7,9 @@ Created on Tue Sep 25 15:57:25 2018
 import random
 import ImgDraw
 
+'''
+f=open('out.txt','w')
+f1=open('in.txt','r')'''
 dots=[]
 roads=[]
 
@@ -123,8 +126,8 @@ if __name__=='__main__':
     GoThrough(dots[a],dots[b])
     print('Длина оптимального маршрута', minl)
     print('Перечень городов в маршруте:')
-    VDTS(minm)'''
-    print('Все маршруты: точка из, точка в, длина')
+    VDTS(minm)
+    print('Все маршруты: точка из, точка в, длина')'''
     paths=[]
     for i in dots:
         for j in dots:
@@ -144,13 +147,11 @@ if __name__=='__main__':
     VDTSG(dots,d)
     del d
     a.save('Output.png','PNG')
-    
-    
-    
-    
-    input('press enter to exit')
-    
-
+    a.show()
+    '''
+    f.close()
+    f1.close()
+    '''
 
     
 
