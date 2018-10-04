@@ -32,9 +32,13 @@ setup(
     version = "0",
     description = "Генератор графов",
 <<<<<<< HEAD
+<<<<<<< HEAD
     executables = [Executable("Main.py",base='Console')]
 =======
     executables = [Executable("Main.py")]
+=======
+    executables = [Executable("TkInterFace.py")]
+>>>>>>> dev
     #,options=options
 >>>>>>> dev
 )
