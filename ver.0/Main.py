@@ -10,11 +10,7 @@ import ImgDraw
 '''
 f=open('out.txt','w')
 f1=open('in.txt','r')'''
-dots=[]
-roads=[]
 
-minl=-1
-minm=[]
 
 
 class Dot:
@@ -108,15 +104,21 @@ def GoThrough(a,b,m=[],l=0):
             l1=l
             l1+=i.l
             GoThrough(i.oend(a),b,m=m1,l=l1)
-        
 
     
     
     
-if __name__=='__main__':
+def Main(dt,rs):
+    global dots,roads,minl,minm,a
+    print(dt,rs)
+    dots=[]
+    roads=[]
+
+    minl=-1
+    minm=[]
     print('Ввод значений: кол-во городов, enter, кол-во ходов')
     print('Вывод: Дорога из:, дорога в:, длина дороги')
-    Generate(int(input()),int(input()))
+    Generate(dt,rs)
     Visual()
     
     '''
@@ -147,14 +149,14 @@ if __name__=='__main__':
     VDTSG(dots,d)
     del d
     a.save('Output.png','PNG')
-    a.show()
+    #a.show()
     '''
     f.close()
     f1.close()
     '''
 
-    
-
+if __name__=='__main__':
+    Main(int(input()),int(input()))
 
 
 

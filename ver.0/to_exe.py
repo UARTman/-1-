@@ -28,6 +28,6 @@ setup(
     name = "Генератор графов",
     version = "0",
     description = "Генератор графов",
-    executables = [Executable("Main.py")]
+    executables = [Executable("TkInterFace.py")]
     #,options=options
 )
