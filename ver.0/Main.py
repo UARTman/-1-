@@ -6,7 +6,7 @@ Created on Tue Sep 25 15:57:25 2018
 """
 import random
 import ImgDraw
-
+import sys
 '''
 f=open('out.txt','w')
 f1=open('in.txt','r')'''
@@ -77,10 +77,10 @@ def Visual():
         print(i.a.idt,' ',i.b.idt,' ',i.l)
         
 
-def VDTS(x):
+def VDTS(x,file=sys.stdout):
     for i in x:
-        print(i.idt)
-        
+        print(i.idt,end=' ',file=file)
+    print('',file=file)
 def VDTSG(x,draw):
     ImgDraw.drawroads(draw,500,500,200,len(x),roads)
     ImgDraw.drawcrcls(draw,500,500,200,len(x),30)
@@ -105,11 +105,16 @@ def GoThrough(a,b,m=[],l=0):
             l1+=i.l
             GoThrough(i.oend(a),b,m=m1,l=l1)
 
-    
+def Resh(file,paths):
+    for i in paths:
+        print('==========',file=file)
+        print('Маршрут из точки ',i[0].idt,' в точку ',i[1].idt,' длиной ',i[2],':',file=file)
+        print('Список точек:',file=file)
+        VDTS(i[3],file=file)
     
     
 def Main(dt,rs):
-    global dots,roads,minl,minm,a
+    global dots,roads,minl,minm,a,paths
     print(dt,rs)
     dots=[]
     roads=[]
