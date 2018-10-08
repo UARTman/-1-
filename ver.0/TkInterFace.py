@@ -5,8 +5,8 @@ Created on Wed Oct  3 12:41:56 2018
 @author: UARTman
 """
 import Main
-from tkinter import *
-from tkinter.ttk import *
+from tkinter import Entry,Label,Button,Tk,Toplevel
+from tkinter.ttk import Entry,Label,Button
 from PIL import Image,ImageTk,ImageDraw,ImageFont
 
 import os
