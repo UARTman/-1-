@@ -115,16 +115,22 @@ def Resh(file,paths):
     
 def Main(dt,rs):
     global dots,roads,minl,minm,a,paths
+<<<<<<< HEAD
     print(dt,rs)
+=======
+    #print(dt,rs)
+>>>>>>> dev
     dots=[]
     roads=[]
 
     minl=-1
     minm=[]
+    '''
     print('Ввод значений: кол-во городов, enter, кол-во ходов')
     print('Вывод: Дорога из:, дорога в:, длина дороги')
+    '''
     Generate(dt,rs)
-    Visual()
+    #Visual()
     
     '''
     print('Введите номер пункта А, enter, номер пункта B')
@@ -143,12 +149,12 @@ def Main(dt,rs):
                 minm=[]
                 GoThrough(i,j,[])
                 paths.append((i,j,minl,minm))
-    
+    '''
     for i in paths:
         print('==========')
         print(i[0].idt,i[1].idt,i[2])
         VDTS(i[3])
-    
+    '''
     a=ImgDraw.Image.new('RGBA',(1000,1000),color='white')
     d=ImgDraw.ImageDraw.Draw(a)
     VDTSG(dots,d)
